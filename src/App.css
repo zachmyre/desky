@@ -2,6 +2,8 @@
   --background-color: #1E1E1E;
   --text-color: #F0F0F0;
   --sidebar-bg: #333333;
+  --border-radius: 10px;
+  --link-hover: rgba(60, 60, 60, 1); 
 }
 
 
@@ -38,10 +40,9 @@ html {
 
 
 .Sidebar{
-  
   height: 100vh;
   width: 33vw;
-  padding: 12px;
+  padding: 0 5px 0 5px;
   /* border-right: 3px solid rgba(75, 75, 77, 0.04);
   box-shadow: 13px 0px 20px 2px rgba(75, 75, 77, 0.2); */
   display: flex;
@@ -52,17 +53,33 @@ html {
   /* justify-content: center; */
   width: 100%;
   margin: 20px 0px 0px 0px;
-  border-radius: 10px;
+  border-radius: var(--border-radius);
   color: white;
   background: #333333;
   font-weight: 550;
   text-decoration: none;
 }
 
+.Sidebar-link:hover{
+  background: var(--link-hover);
+}
+
+.Sidebar-link a{
+  font-size: .9em;
+  text-decoration: none;
+  display: flex;
+  padding: 0px 0px 0px 5px;
+  color: var(--text-color);
+}
+
+.Sidebar-link a p{
+  padding-right: 5px;
+}
+
 .MainWindow{
   background-color: #333333;
   width: 100%;
-  border-radius: 10px;
+  border-radius: var(--border-radius);
   padding: 20px;
   box-shadow: inset 5px 5px 5px 2px rgba(75, 75, 77, 0.3);
 }

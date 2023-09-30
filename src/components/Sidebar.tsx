@@ -9,7 +9,8 @@ interface Link{
 
 const links: Link[]= [
     {name: "Dashboard", href: "/", icon: "🏠"},
-    {name: "JSON Formatter", href: "/json/formatter", icon: "💽"}
+    {name: "JSON Formatter", href: "/json/formatter", icon: "💽"},
+    {name: "HTML Editor", href: "html/editor", icon: "🎨"}
 ]
 
 const Sidebar: React.FC = () => {
