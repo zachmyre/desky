@@ -26,7 +26,7 @@ const HTMLEditor: React.FC = () => {
 const styles = {
   Container: {
     display: 'flex',
-    height: '500px', // Adjust the height as needed
+    height: '85%', // Adjust the height as needed
     width: '100%'
   },
   Editor: {
@@ -34,7 +34,7 @@ const styles = {
     width: '33%',
     marginRight: '5px',
     borderRadius: '10px',
-    padding: '10px'
+    padding: '10px',
   },
   EditorInput: {
     height: '100%',
@@ -46,7 +46,7 @@ const styles = {
     resize: 'none' as 'none' // Set resize to none
   },
   View: {
-    backgroundColor: '#ffffff',
+    backgroundColor: 'white',
     width: '77%',
     borderRadius: '10px',
     border: '1px solid #ccc',

@@ -1,27 +1,38 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import '../App.css';
 
 interface LinkObj {
   className?: string;
-  icon: string;
+  icon: Icon;
   name: string;
+  description?: string;
   href: string;
-  onClick?: React.MouseEventHandler
 }
 
-const links: LinkObj[] = [
-  { name: "Dashboard", href: "/", icon: "🏠" },
-  { name: "JSON Formatter", href: "/json/formatter", icon: "💽" },
-  { name: "HTML Editor", href: "/html/editor", icon: "🎨" } // Corrected href
+interface Icon{
+  iconClass: string;
+  iconName: string;
+}
+
+const materialIconClass: string = "material-icons icon-margin";
+
+export const links: LinkObj[] = [
+  { name: "Dashboard", href: "/", icon: {iconClass: materialIconClass, iconName: "dashboard"} },
+  { name: "JSON Formatter", description: "Format JSON Data" , href: "/json/formatter", icon: {iconClass: materialIconClass, iconName: "code"} },
+  { name: "HTML Editor", description: "Spin up quick HTML/CSS demo" , href: "/html/editor", icon: {iconClass: materialIconClass, iconName: "widgets"} } // Corrected href
 ];
 
-const Sidebar: React.FC = () => {
+
+const Sidebar: React.FC = () => {  
+  const location = useLocation();
   return (
     <ul className="Sidebar">
+      <h4 className="Sidebar-title">Tools</h4>
       {links?.map((link, index) => (
+        
         <LinkElement
-          className="Sidebar-link"
-          icon={link.icon}
+          className={location.pathname === link.href ? 'Sidebar-link Sidebar-link-active' : 'Sidebar-link'}
+          icon={{iconClass: link.icon.iconClass, iconName: link.icon.iconName}}
           key={index}
           name={link.name}
           href={link.href}
@@ -31,14 +42,12 @@ const Sidebar: React.FC = () => {
   );
 }
 
-const LinkElement: React.FC<LinkObj> = ({ className, name, href, icon, onClick }) => {
+const LinkElement: React.FC<LinkObj> = ({ className, name, href, icon }) => {
   return (
-    <li className={className}>
-      <Link to={href}>
-        <p>{icon}</p>
+    <Link className={className} to={href}>
+        <p className={icon.iconClass}>{icon.iconName}</p>
         <p>{name}</p>
-      </Link>
-    </li>
+    </Link>
   )
 }
 
