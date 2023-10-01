@@ -15,14 +15,19 @@ html {
 
 .App{
   /* display: flex; */
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
 }
 
 .TopBarContainer{
-  width: 100vw;
+  width: 100%;
 }
 
 .DisplayContainer{
   display: flex;
+  width: 100%;
+  height: 100%;
 }
 
 .Topbar{
@@ -41,7 +46,7 @@ html {
 
 .Sidebar{
   height: 100vh;
-  width: 33vw;
+  width: 30%;
   padding: 0 5px 0 5px;
   /* border-right: 3px solid rgba(75, 75, 77, 0.04);
   box-shadow: 13px 0px 20px 2px rgba(75, 75, 77, 0.2); */
@@ -77,8 +82,9 @@ html {
 }
 
 .MainWindow{
-  background-color: #333333;
+  background: #333333;
   width: 100%;
+  height: 100%;
   border-radius: var(--border-radius);
   padding: 20px;
   box-shadow: inset 5px 5px 5px 2px rgba(75, 75, 77, 0.3);

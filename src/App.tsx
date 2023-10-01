@@ -6,7 +6,7 @@ import MainWindow from './components/MainWindow';
 
 
 const App: React.FC = () => {
-  const [selectedRoute, setSelectedRoute] = useState<string | null>(null);
+  // const [selectedRoute, setSelectedRoute] = useState<string | null>(null);
 
   return (
     <div className="App">
@@ -15,8 +15,8 @@ const App: React.FC = () => {
       </header>
       <Router>
       <div className="DisplayContainer">
-        <Sidebar setSelectedRoute={setSelectedRoute} />
-        <MainWindow selectedRoute={selectedRoute} />
+        <Sidebar />
+        <MainWindow />
       </div>
       </Router>
     </div>

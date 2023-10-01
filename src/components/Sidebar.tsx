@@ -15,7 +15,7 @@ const links: LinkObj[] = [
   { name: "HTML Editor", href: "/html/editor", icon: "🎨" } // Corrected href
 ];
 
-const Sidebar: React.FC<{ setSelectedRoute: (route: string) => void }> = ({ setSelectedRoute }) => {
+const Sidebar: React.FC = () => {
   return (
     <ul className="Sidebar">
       {links?.map((link, index) => (
@@ -25,7 +25,6 @@ const Sidebar: React.FC<{ setSelectedRoute: (route: string) => void }> = ({ setS
           key={index}
           name={link.name}
           href={link.href}
-          onClick={() => setSelectedRoute(link.href)}
         />
       ))}
     </ul>
