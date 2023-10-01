@@ -1,9 +1,10 @@
 ** = actively working on feature
+*! = complete/semi-complete
 Features to add
 
--in app html editor where you write simple html and css and it displays the element in a minified version to the side for testing 
+-*!in app html editor where you write simple html and css and it displays the element in a minified version to the side for testing 
     - text box / editor on the left then a canvas on the right for showing the element (mini web page, 8x12 sheet of paper like)
--**dark mode colors like devtoys
+-*!dark mode colors like devtoys
 -base64 encoder/decoder
 -base64 decode image with text on left and image on right
 -json formatter
@@ -11,3 +12,4 @@ Features to add
 -word counter ?
 -hex to decimal ?
 -hex to string 
+-**routing for main window

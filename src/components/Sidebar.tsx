@@ -1,32 +1,46 @@
+import { Link } from 'react-router-dom';
 import '../App.css';
 
-interface Link{
-    className?: string;
-    icon: string;
-    name: string;
-    href: string;
+interface LinkObj {
+  className?: string;
+  icon: string;
+  name: string;
+  href: string;
+  onClick?: React.MouseEventHandler
 }
 
-const links: Link[]= [
-    {name: "Dashboard", href: "/", icon: "🏠"},
-    {name: "JSON Formatter", href: "/json/formatter", icon: "💽"},
-    {name: "HTML Editor", href: "html/editor", icon: "🎨"}
-]
+const links: LinkObj[] = [
+  { name: "Dashboard", href: "/", icon: "🏠" },
+  { name: "JSON Formatter", href: "/json/formatter", icon: "💽" },
+  { name: "HTML Editor", href: "/html/editor", icon: "🎨" } // Corrected href
+];
 
-const Sidebar: React.FC = () => {
+const Sidebar: React.FC<{ setSelectedRoute: (route: string) => void }> = ({ setSelectedRoute }) => {
   return (
     <ul className="Sidebar">
       {links?.map((link, index) => (
-        <LinkElement className="Sidebar-link" icon={link.icon} key={index} name={link.name} href={link.href} />
+        <LinkElement
+          className="Sidebar-link"
+          icon={link.icon}
+          key={index}
+          name={link.name}
+          href={link.href}
+          onClick={() => setSelectedRoute(link.href)}
+        />
       ))}
     </ul>
   );
 }
 
-const LinkElement: React.FC<Link> = ({className, name, href, icon}) => {
-    return (
-        <li className={className}><a href={href}><p>{icon}</p> <p>{name}</p></a></li>
-    )
+const LinkElement: React.FC<LinkObj> = ({ className, name, href, icon, onClick }) => {
+  return (
+    <li className={className}>
+      <Link to={href}>
+        <p>{icon}</p>
+        <p>{name}</p>
+      </Link>
+    </li>
+  )
 }
 
 export default Sidebar;
