@@ -25,10 +25,10 @@ const HTMLEditor: React.FC = () => {
 
 
   return (
-    <div style={styles.Container}>
-      <div style={styles.Editor}>
+    <div className="Container">
+      <div className="Editor">
         <textarea
-          style={styles.EditorInput}
+          className="EditorInput"
           value={htmlInput}
           onChange={handleInputChange}
           placeholder="Enter HTML code here"
@@ -40,27 +40,6 @@ const HTMLEditor: React.FC = () => {
 }
 
 const styles = {
-  Container: {
-    display: 'flex',
-    height: '85%', // Adjust the height as needed
-    width: '100%'
-  },
-  Editor: {
-    backgroundColor: '#f9f9f9',
-    width: '33%',
-    marginRight: '5px',
-    borderRadius: '10px',
-    padding: '10px',
-  },
-  EditorInput: {
-    height: '100%',
-    width: '100%',
-    border: 'none',
-    fontSize: '14px',
-    fontFamily: 'monospace',
-    outline: 'none',
-    resize: 'none' as 'none' // Set resize to none
-  },
   View: {
     backgroundColor: 'white',
     width: '77%',
